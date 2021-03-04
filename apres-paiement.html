@@ -3,8 +3,6 @@
 
 Installer le code en bas de page, avant balise de fermeture </body>
 
-Il faut que l'URL de la page de confirmation soit avec WWW (www.schleiper.com/...)
-
 jQuery est requis
 
 -->
@@ -15,24 +13,24 @@ jQuery est requis
 <script>
 
 
-const cookieName = "bluetimeadt";
+const cookieName = "mycookie";
 let inputCookie;
 let cookieResult;
 
 
 let sourceTrackerArray = [
    {
-    KeyToMatch: "gclid",
+    KeyToMatch: "get_param",
     cookieName: cookieName,
-    cookieValue: "btadw1",
+    cookieValue: "my_value",
     cookieAffiliation : "DirectAdwords"
   },
 
   {
-    KeyToMatch: "lamaisondesartistes",
+    KeyToMatch: "get_param_2",
     cookieName: cookieName,
-    cookieValue: "btadw2",
-    cookieAffiliation : "lamaisondesartistes"
+    cookieValue: "my_value_2",
+    cookieAffiliation : "landing_page"
   }
   
 ];
@@ -59,7 +57,7 @@ function getCookie(cname) {
   return false;
 }
 
-function bluetimeDataManager(){
+function gaData(){
 	
 	
 	inputCookie = getCookie(cookieName);
@@ -110,7 +108,7 @@ function bluetimeDataManager(){
 
 $(document).ready(function(){
 
-	bluetimeDataManager();   
+	gaData();   
 
 	console.log("INPUT COOKIE : " + inputCookie + "  OUTPUT COOKIE => " + cookieResult );
 

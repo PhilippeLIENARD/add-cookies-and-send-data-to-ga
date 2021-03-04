@@ -13,28 +13,12 @@ jQuery est requis
 
 
 let currentURL = window.location.href;
-const cookieName = "bluetimeadt";
+const cookieName = "myCookieName";
 let cookieDate = new Date();
 cookieDate.setTime(cookieDate.getTime() + 31536000000);
 let inputCookie;
 let cookieResult;
-
-let sourceTrackerArray = [
-   {
-    KeyToMatch: "gclid",
-    cookieName: cookieName,
-    cookieValue: "btadw1",
-    cookieAffiliation : "DirectAdwords"
-  },
-
-  {
-    KeyToMatch: "lamaisondesartistes",
-    cookieName: cookieName,
-    cookieValue: "btadw2",
-    cookieAffiliation : "lamaisondesartistes"
-  }
-  
-];
+let sourceTrackerArray = [   {    KeyToMatch: "get_param",    cookieName: cookieName,    cookieValue: "my_value",    cookieAffiliation : "DirectAdwords"  },  {    KeyToMatch: "get_param_2",    cookieName: cookieName,    cookieValue: "my_value_2",    cookieAffiliation : "landing_page"  }  ];
 
 function getCookie(cname) {
   let name = cname + "=";
@@ -57,7 +41,7 @@ function getCookie(cname) {
   return false;
 }
 
-function bluetimeSourceManager(){
+function checkCookie(){
 inputCookie = getCookie(cookieName);  
      
     $.each( sourceTrackerArray , function(key,value){                  
@@ -84,7 +68,7 @@ inputCookie = getCookie(cookieName);
 
 $(document).ready(function(){
 
-	bluetimeSourceManager();
+	checkCookie();
 	 
 	console.log("INPUT COOKIE : " + inputCookie + "  OUTPUT COOKIE => " + cookieResult );
 
