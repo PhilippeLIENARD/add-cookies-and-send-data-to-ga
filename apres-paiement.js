@@ -1,17 +1,12 @@
-
-<!-- page de confirmation 
+﻿
+/*page de confirmation 
 
 Installer le code en bas de page, avant balise de fermeture </body>
 
 jQuery est requis
+*/
 
--->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script>
-
+
 
 const cookieName = "mycookie";
 let inputCookie;
@@ -114,4 +109,3 @@ $(document).ready(function(){
 
 });
 
-</script>
