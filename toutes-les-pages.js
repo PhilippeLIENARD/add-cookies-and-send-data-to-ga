@@ -29,21 +29,14 @@ let sourceTrackerArray = [
     cookieAffiliation : "DirectAdwords"
   },
 
-
-
   {
 
     KeyToMatch: "get_param_2",
-
     cookieName: cookieName,
-
     cookieValue: "my_value_2",
-
     cookieAffiliation : "landing_page"
-
+	  
   }
-
-  
 
 ];
 
