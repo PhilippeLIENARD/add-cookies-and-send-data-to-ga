@@ -1,22 +1,7 @@
-﻿
-
 /*page de confirmation 
-
-
-
 Installer le code en bas de page, avant balise de fermeture </body>
-
-
-
 jQuery est requis
-
 */
-
-
-
-
-
-
 
 const cookieName = "myCookieName";
 
