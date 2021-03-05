@@ -1,23 +1,10 @@
-﻿
-
 /* Landing pages (toutes les pages du site )
 
-
-
 Installer le code en bas de page, avant balise de fermeture </body>
-
-
 
 jQuery est requis
 
 */
-
-
-
-
-
-
-
 
 
 let currentURL = window.location.href;
