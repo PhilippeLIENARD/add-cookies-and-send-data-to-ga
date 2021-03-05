@@ -19,8 +19,6 @@ let inputCookie;
 
 let cookieResult;
 
-
-
 let sourceTrackerArray = [
    {
     KeyToMatch: "get_param",
@@ -41,7 +39,6 @@ let sourceTrackerArray = [
 ];
 
 
-
 function getCookie(cname) {
 
   let name = cname + "=";
@@ -55,8 +52,6 @@ function getCookie(cname) {
   for (let i = 0; i < ca.length; i++) {
 
     let c = ca[i];
-
-
 
     while (c.charAt(0) == " ") {
 
