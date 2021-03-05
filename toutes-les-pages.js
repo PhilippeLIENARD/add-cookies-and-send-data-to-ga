@@ -50,11 +50,7 @@ function getCookie(cname) {
 
   let ca = decodedCookie.split(";");
 
-
-
-  console.log("* * * *  LOG COOKIE FUNCTION -- ca -- " + ca);
-
-
+  //console.log("* * * *  LOG COOKIE -- ca -- " + ca);
 
   for (let i = 0; i < ca.length; i++) {
 
@@ -76,55 +72,42 @@ function getCookie(cname) {
 
   }
 
-
-
   return false;
 
 }
 
 
 
-function checkCookie(){
+function checkAndCreateCookie(){
 
 inputCookie = getCookie(cookieName);  
-
      
 
-    $.each( sourceTrackerArray , function(key,value){                  
+    $.each( sourceTrackerArray , function(key,value){     
+	   
+	let counter = key+1;
+	
+	let thisKey= value.KeyToMatch;
+	    
+	let thisCookie = value.cookieValue;   
 
-                   
+             if(currentURL.indexOf(thisKey) > 0){
 
-             let counter = key+1;            
-
-
-
-             let thisKey_jQuery = value.KeyToMatch;
-
-             let thisCookie_jQuery = value.cookieValue;   
-
-
-
-             if(currentURL.indexOf(thisKey_jQuery) > 0){
-
-              document.cookie = cookieName + " = " + thisCookie_jQuery + "; expires = " + cookieDate + "; path=/";               
+              document.cookie = cookieName + " = " + thisCookie + "; expires = " + cookieDate + "; path=/";               
 
               console.log("++++++++ EACH : URL DONE ::::: " + counter);
 
 
 
-             } else if (currentURL.indexOf(thisKey_jQuery) < 0) {
+             } else if (currentURL.indexOf(thisKey) < 0) {
 
                 console.log("- - -  EACH : URL FAIL ::::: " + counter)
 
-             }
-
-			 
-
-             cookieResult = getCookie(cookieName); 
-
-             console.log(typeof thisKey_jQuery + " ; " + thisKey_jQuery.length);  
-
-
+             }	
+	    
+	cookieResult = getCookie(cookieName); 
+	
+	//console.log(typeof thisKey + " ; " + thisKey.length);  
 
     });
 
@@ -136,15 +119,9 @@ inputCookie = getCookie(cookieName);
 
 $(document).ready(function(){
 
-
-
-	checkCookie();
-
-	 
+	checkAndCreateCookie();	 
 
 	console.log("INPUT COOKIE : " + inputCookie + "  OUTPUT COOKIE => " + cookieResult );
-
-
 
 });
 
