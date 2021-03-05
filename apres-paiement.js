@@ -28,10 +28,6 @@ let sourceTrackerArray = [
 
 ];
 
-
-
-
-
 function getCookie(cname) {
 
   let name = cname + "=";
